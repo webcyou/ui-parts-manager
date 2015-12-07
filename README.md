@@ -8,8 +8,9 @@ FrontEnd Developer Tool
 
 
 ## Install
+### npm
 ````
-$ npm install
+$ npm install ui-parts-manager
 ````
 
 
