@@ -1,0 +1,10 @@
+*.DS_Store
+.sass-cache/
+.idea
+Thumbs.db
+*.iml
+./data/
+./gulpfile.js
+./tsd.json
+./tslint.json
+./typings
