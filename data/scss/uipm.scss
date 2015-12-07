@@ -1,0 +1,291 @@
+@charset "UTF-8";
+@import "reset";
+@import "mixin";
+@import "compass";
+@import "compass/css3/";
+@import "compass/utilities";
+
+header {
+    background: #222;
+    .wrap {
+        @include clearfix;
+        width: 90%;
+        margin: 0 auto;
+        padding: 12px 0;
+        .search,
+        .cssInput {
+            width: 50%;
+            input {
+                display: inline-block;
+                width: 50%;
+                height: 20px;
+                padding: 4px 6px;
+                font-size: 14px;
+                line-height: 20px;
+                color: #555;
+                vertical-align: middle;
+                border-radius: 4px;
+                background-color: #fff;
+                border: 1px solid #ccc;
+                box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+                &:focus {
+                    outline: none;
+                    transition: width 0.1s ease;
+                }
+                &[type="search"] {
+                    box-sizing: content-box;
+                }
+            }
+            button {
+                float: right;
+            }
+        }
+        .search {
+            float: left;
+            input {
+                float: left;
+                &:focus {
+                    width: 100%;
+                }
+            }
+        }
+        .cssInput {
+            float: right;
+            input {
+                float: right;
+                &:focus {
+                    width: 70%;
+                }
+            }
+        }
+        .logo.main {
+            position: absolute;
+            top: 4px;
+        }
+    }
+}
+
+nav {
+    position: relative;
+    width: 90%;
+    margin: 20px auto 0;
+    .tabMenu {
+        min-height: 40px;
+        padding-right: 20px;
+        padding-left: 20px;
+        background-image: linear-gradient(to bottom, #fff, #f2f2f2);
+        background-repeat: repeat-x;
+        border: 1px solid #d4d4d4;
+        border-radius: 4px;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
+        &::before,
+        &::after {
+            display: table;
+            line-height: 0;
+            content: "";
+        }
+    }
+    .tabMenuList {
+        @include clearfix;
+        position: relative;
+        left: 0;
+        display: block;
+        float: left;
+        margin: 0 10px 0 0;
+        li {
+            float: left;
+            height: 40px;
+            padding: 0 5px;
+            border-left: 1px solid #DDD;
+            line-height: 40px;
+            &:last-child {
+                border-right: 1px solid #DDD;
+            }
+            &.cur {
+                color: #555;
+                text-decoration: none;
+                background-color: #e5e5e5;
+                box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.125);
+            }
+            input {
+                @include appearance(none);
+                @include box-sizing(border-box);
+                display: block;
+                width: 100%;
+                height: 40px;
+                margin: 0 auto;
+                background: none;
+                border: none;
+                font-size: 12px;
+                font-weight: bold;
+                text-align: center;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+.mainView,
+.readFiles {
+    position: relative;
+    width: 90%;
+    margin: 20px auto;
+    > .title {
+        background-image: linear-gradient(to bottom, #fff, #f2f2f2);
+        background-repeat: repeat-x;
+        font-weight: bold;
+        line-height: 34px;
+        > .titleList {
+        @include display-flex;
+        border-right: #ddd 1px solid;
+            > li {
+                @include box-sizing(border-box);
+                min-width: 80px;
+                padding: 0 0 0 10px;
+                border-top: #ddd 1px solid;
+                border-left: #ddd 1px solid;
+                font-size: 14px;
+                &.col1 { width: 20%; }
+                &.col2 { width: 40%; }
+                &.col3 { width: 40%; }
+            }
+        }
+    }
+    > .mainInputView,
+    > .readFilesView {
+        width: 100%;
+        border-bottom: #dddddd 1px solid;
+        > .itemList {
+            @include display-flex;
+            > li {
+                @include box-sizing(border-box);
+                min-width: 80px;
+                padding: 5px 10px;
+                border-top: #ddd 1px solid;
+                border-left: #ddd 1px solid;
+                font-size: 14px;
+                line-height: 1.2;
+                &:last-child {
+                    border-right: #ddd 1px solid;
+                }
+                &.col1 {
+                    width: 20%;
+                    p { padding: 4px 0 0 4px; }
+                }
+                &.col2 { width: 40%; }
+                &.col3 {
+                    position: relative;
+                    width: 40%;
+                }
+                textarea {
+                    @include appearance(none);
+                    display: block;
+                    @include box-sizing(border-box);
+                    width: 100%;
+                    background: none;
+                    border: none;
+                    resize: none;
+                    &:disabled {
+                        color: #000;
+                    }
+                }
+                .navText {
+                    color: #aaa;
+                    font-size: 12px;
+                }
+            }
+            &:nth-child(even) > li {
+                background-color: #F9F9F9;
+            }
+        }
+    }
+    > .mainInputView {
+        > .itemList {
+            > li { min-height: 67px; }
+        }
+    }
+    .assetsSwitch {
+        margin-bottom: 10px;
+        font-size: 12px;
+    }
+}
+
+.readFiles > .title > .titleList > li.col2,
+.readFiles > .readFilesView > .itemList > li.col2 {
+    position: relative;
+    width: 80%;
+
+}
+
+.addCategoryBtn,
+.addItemBtn,
+.deleteCategoryBtn,
+.deleteItemBtn,
+.deleteAssetsBtn {
+    position: absolute;
+    bottom: 14px;
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    line-height: 15px;
+    color: #FFF;
+    text-align: center;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    &:hover {
+        opacity: 0.7;
+    }
+}
+
+.addCategoryBtn,
+.addItemBtn {
+    right: 10px;
+    background-image: linear-gradient(to bottom, #8AE100, #7AC700);
+    font-size: 14px;
+}
+
+.addItemBtn {
+    bottom: -25px;
+}
+
+.deleteCategoryBtn,
+.deleteItemBtn,
+.deleteAssetsBtn {
+    background-image: linear-gradient(to bottom, #FD4141, #D73838);
+    font-size: 22px;
+    text-indent: 1px;
+}
+
+.deleteCategoryBtn {
+    right: 35px;
+}
+
+.deleteItemBtn,
+.deleteAssetsBtn {
+    top: 50%;
+    right: -25px;
+    margin-top: -8px;
+}
+
+.PMT_btn {
+    height: 30px;
+    margin-left: 5px;
+    padding: 0 6px;
+    font-size: 14px;
+    line-height: 20px;
+    color: #555;
+    vertical-align: middle;
+    border-radius: 4px;
+    background-image: linear-gradient(to bottom, #fff, #f2f2f2);
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
+
+.logo {
+    &.main {
+        width: 92px;
+        height: 46px;
+        background: url(/img/ui/base/logo_main.png) no-repeat;
+        @include background-size(92px auto);
+    }
+}

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="address=no">
+
+    <title>UIPM - UI Parts Manager Tool -</title>
+
+    <link rel="shortcut icon" href="/img/ui/base/favicon.ico">
+    <link href="/css/uipm.css" rel="stylesheet" type="text/css" media="screen" />
+    <script src="/js/contrib.js" type="text/javascript"></script>
+    <script src="/js/main.js" type="text/javascript"></script>
+</head>
+<body ng-app="Top">
+<div>
+    <section ng-controller="MainController">
+        <header>
+            <div class="wrap">
+                <p class="logo main"></p>
+                <div class="cssInput">
+                    <button class="PMT_btn" ng-click="onClickAddAssets(assets)">追加</button>
+                    <input type="text" placeholder="読み込むcssを入力" ng-model="assets" />
+                </div>
+            </div>
+        </header>
+
+        <div class="readFiles">
+            <p class="assetsSwitch" ng-click="onClickAssetsSwitch()">
+                <a href="javascript: void(0)" ng-switch="isShowAssets"><span ng-switch-when="false">▼ Show</span><span ng-switch-when="true">▲ Hide</span> Assets Path</a>
+            </p>
+            <div class="title" ng-show="isShowAssets">
+                <ul class="titleList">
+                    <li class="col1">種類</li>
+                    <li class="col2">パス</li>
+                </ul>
+            </div>
+            <div class="readFilesView" ng-show="isShowAssets">
+                <ul class="itemList" ng-repeat="assets in assetsList track by $index">
+                    <li class="col1" ng-cloak>{{assets.type}}</li>
+                    <li class="col2" ng-cloak>{{assets.path}} <p class="deleteAssetsBtn" ng-click="onClickDeleteAssets(assets)">-<p></li>
+                </ul>
+            </div>
+        </div>
+        <div class="contents">
+            <nav>
+                <div class="tabMenu">
+                    <ul class="tabMenuList">
+                        <li ng-repeat="category in categoryList track by $index" ng-click="onClickTabChange($index)" ng-class="{cur: selectedTabNum === $index}" ng-dblclick="onDblEditCategory(category)" ng-style="{'width': category.len + 'px'}">
+                            <input type="text" ng-readonly="!category.edit" ng-model="category.name" ng-blur="editResetCategory(category)" ng-style="{'width': category.len + 'px'}" />
+                        </li>
+                    </ul>
+                </div>
+                <p class="addCategoryBtn" ng-click="onClickAddCategory()">+</p>
+                <p class="deleteCategoryBtn" ng-click="onClickDeleteCategory(categoryList[selectedTabNum])">-</p>
+            </nav>
+
+            <div class="mainView">
+                <div class="title">
+                    <ul class="titleList">
+                        <li class="col1">Class Name</li>
+                        <li class="col2">Parts Design</li>
+                        <li class="col3">HTML</li>
+                    </ul>
+                </div>
+                <div class="mainInputView">
+                    <ul class="itemList" ng-repeat="item in categoryList[selectedTabNum].item track by $index">
+                        <li class="col1">
+                            <ul class="cssClassList">
+                                <li ng-repeat="cssClass in item.getCssClass(item.dom) track by $index">{{cssClass}}</li>
+                            </ul>
+                        </li>
+                        <li class="col2">
+                            <div ng-bind-html="item.parseHTML"></div>
+                        </li>
+                        <li class="col3" item-list>
+                            <p class="navText" ng-if="!item.dom && !item.edit">ダブルクリックで編集できます。<br>HTML要素を入力してください。</p>
+                            <textarea ng-show="item.dom || item.edit" name="" id="" cols="30" rows="4" ng-disabled="!item.edit" ng-model="item.dom" ng-blur="editResetItem(item)"></textarea>
+                            <p class="deleteItemBtn" ng-click="onClickDeleteItem(selectedTabNum, $index, item)">-</p>
+                        </li>
+                    </ul>
+                </div>
+                <p class="addItemBtn" ng-click="onClickAddItem(selectedTabNum, categoryList[selectedTabNum])">+</p>
+            </div>
+        </div><!-- /.contents -->
+
+    </section>
+</div>
+</body>
+</html>

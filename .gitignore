@@ -1,0 +1,15 @@
+*.DS_Store
+.sass-cache/
+.idea
+.gitattributes
+Thumbs.db
+vendor
+node_modules/
+bower_components/
+tmp/
+typings/
+tests/ts/libs/*.js
+espowered/
+assets.iml
+*.iml
+npm-debug.log
