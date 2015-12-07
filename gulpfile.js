@@ -119,7 +119,7 @@ gulp.task('typescript', function () {
 });
 
 
-gulp.task('tsd', function () {
+gulp.task('tsd', function (callback) {
     tsd({
         command: 'reinstall',
         config: './tsd.json'
