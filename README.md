@@ -1,9 +1,9 @@
 # UIPM
+![UI Parts Manager](http://webcyou.com/ui_parts_manager/img/logo_uipm.png)
+
 ## UI Parts Manager
 FrontEnd Developer Tool
 「UI Parts Manager」
-
-![UI Parts Manager](http://webcyou.com/ui_parts_manager/img/logo_uipm.png)
 
 ## What is this? 「これは何？」
 フロントエンド開発環境にて、UIパーツをGUIで管理する Nodeモジュールとなっております。
