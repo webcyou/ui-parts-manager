@@ -1,6 +1,6 @@
 {
   "name": "ui-parts-manager",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "UI Parts Manager: UIパーツを管理する nodeパッケージです。",
   "author": "Daisuke Takayama<d.takayama.web@gmail.com>",
   "main": "index.js",
