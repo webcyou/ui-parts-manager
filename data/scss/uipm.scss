@@ -112,6 +112,7 @@ nav#uipm-app-nav-menu {
                 @include box-sizing(border-box);
                 display: block;
                 width: 100%;
+                min-width: 1px;
                 height: 40px;
                 margin: 0 auto;
                 padding: 0;
@@ -164,6 +165,7 @@ nav#uipm-app-nav-menu {
                 padding: 5px 10px;
                 border-top: #ddd 1px solid;
                 border-left: #ddd 1px solid;
+                background: #fff;
                 font-size: 14px;
                 line-height: 1.2;
                 &:last-child {
