@@ -3,8 +3,13 @@
 FrontEnd Developer Tool
 「UI Parts Manager」
 
+![UI Parts Manager](http://webcyou.com/ui_parts_manager/img/logo_uipm.png)
+
 ## What is this? 「これは何？」
-フロントエンド開発環境にて、UIパーツを管理する Nodeモジュールとなっております。
+フロントエンド開発環境にて、UIパーツをGUIで管理する Nodeモジュールとなっております。
+
+
+![UI Parts Manager](http://webcyou.com/ui_parts_manager/img/uipm001.png)
 
 
 ## Install
@@ -19,6 +24,38 @@ $ npm install ui-parts-manager
 var uipm = require('ui-parts-manager');
 uipm();
 ````
+Grant.jsやGulpのタスクに追加すると良いかと思います。
+起動すると、開発環境のルートに「uipm.json」が生成されます。
+追加したUIパーツ情報はこちらのjsonファイルで管理されます。
+
+![UI Parts Manager](http://webcyou.com/ui_parts_manager/img/uipm002.png)
+
+ポート番号はデフォルトは「8818」となっております。
+![UI Parts Manager](http://webcyou.com/ui_parts_manager/img/uipm003.png)
+
+cssの追加を行いましょう。
+開発環境のルートから「/」でcssファイルのあるパスを指定します。
+![UI Parts Manager](http://webcyou.com/ui_parts_manager/img/uipm003b.png)
+
+（レイアウト崩れましたら連絡いただけるとありがたいです。絶賛対応中）
+
+cssファイルを追加したら、メニューバー右にあるプラスアイコンでカテゴリを追加します。
+
+![UI Parts Manager](http://webcyou.com/ui_parts_manager/img/uipm004.png)
+
+ダブルクリックで編集。名前を入力できます。
+
+![UI Parts Manager](http://webcyou.com/ui_parts_manager/img/uipm005.png)
+
+右下のプラスアイコンでアイテム項目を追加し、ダブルクリックで編集。
+こちらにHTMLを入力していきます。
+
+![UI Parts Manager](http://webcyou.com/ui_parts_manager/img/uipm006.png)
+
+このような感じでパーツの種類ごとになど自由に管理していくことが可能となっております。
+
+![UI Parts Manager](http://webcyou.com/ui_parts_manager/img/uipm007.png)
+
 
 
 ## Options
