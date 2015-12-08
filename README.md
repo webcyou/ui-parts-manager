@@ -18,7 +18,6 @@ $ npm install ui-parts-manager
 ````
 var uipm = require('ui-parts-manager');
 uipm();
-
 ````
 
 
@@ -35,7 +34,6 @@ uipm({
   root: __dirname + '/app/sp_web',
   port: 8888
 });
-
 ````
 
 
@@ -57,7 +55,6 @@ $ npm install
 $ gulp tsd
 $ gulp
 # Let's access http://localhost:8818/ & coding!!
-
 ````
 
 ### Directory structure
@@ -87,7 +84,6 @@ $ gulp
 ├── tsd.json
 ├── tslint.json
 └── uipm.json
-
 ````
 
 ### gulpfile.js
