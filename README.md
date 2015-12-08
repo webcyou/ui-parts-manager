@@ -50,7 +50,7 @@ Released under the [MIT license](http://opensource.org/licenses/mit-license.php)
 
 ## Development start!
 ````
-$ git clone
+$ git clone git@github.com:webcyou/ui-parts-manager.git
 $ npm install
 $ gulp tsd
 $ gulp
