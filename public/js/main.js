@@ -124,7 +124,7 @@ var Top;
             this._category_list.push(Category.fromData(category));
         };
         TopModel.prototype.deleteCategory = function (fn) {
-            var cur = angular.element(document.querySelector('.tabMenuList .cur'));
+            var cur = angular.element(document.querySelector('.uipm-app-tabMenuList .cur'));
             if (cur.length) {
                 var ret = confirm('選択しているカテゴリを削除します。');
                 if (ret) {

@@ -15,74 +15,74 @@
     <script src="/js/main.js" type="text/javascript"></script>
 </head>
 <body ng-app="Top">
-<div>
-    <section ng-controller="MainController">
-        <header>
-            <div class="wrap">
-                <p class="logo main"></p>
-                <div class="cssInput">
-                    <button class="PMT_btn" ng-click="onClickAddAssets(assets)">追加</button>
+<div id="uipm-app-container">
+    <section ng-controller="MainController" id="uipm-app-section">
+        <header id="uipm-app-header">
+            <div class="uipm-app-header-wrap">
+                <p class="uipm-app-logo-main"></p>
+                <div class="uipm-app-cssInput">
+                    <button class="uipm-app-btn" ng-click="onClickAddAssets(assets)">追加</button>
                     <input type="text" placeholder="読み込むcssを入力" ng-model="assets" />
                 </div>
             </div>
         </header>
 
-        <div class="readFiles">
-            <p class="assetsSwitch" ng-click="onClickAssetsSwitch()">
+        <div id="uipm-app-readFiles-view">
+            <p class="uipm-app-assetsSwitch" ng-click="onClickAssetsSwitch()">
                 <a href="javascript: void(0)" ng-switch="isShowAssets"><span ng-switch-when="false">▼ Show</span><span ng-switch-when="true">▲ Hide</span> Assets Path</a>
             </p>
-            <div class="title" ng-show="isShowAssets">
-                <ul class="titleList">
-                    <li class="col1">種類</li>
-                    <li class="col2">パス</li>
+            <div class="uipm-app-title" ng-show="isShowAssets">
+                <ul class="uipm-app-titleList">
+                    <li class="uipm-app-col1">種類</li>
+                    <li class="uipm-app-col2">パス</li>
                 </ul>
             </div>
-            <div class="readFilesView" ng-show="isShowAssets">
-                <ul class="itemList" ng-repeat="assets in assetsList track by $index">
-                    <li class="col1" ng-cloak>{{assets.type}}</li>
-                    <li class="col2" ng-cloak>{{assets.path}} <p class="deleteAssetsBtn" ng-click="onClickDeleteAssets(assets)">-<p></li>
+            <div class="uipm-app-readFiles" ng-show="isShowAssets">
+                <ul class="uipm-app-itemList" ng-repeat="assets in assetsList track by $index">
+                    <li class="uipm-app-col1" ng-cloak>{{assets.type}}</li>
+                    <li class="uipm-app-col2" ng-cloak>{{assets.path}} <p class="uipm-app-delete-assetsBtn" ng-click="onClickDeleteAssets(assets)">-<p></li>
                 </ul>
             </div>
         </div>
-        <div class="contents">
-            <nav>
-                <div class="tabMenu">
-                    <ul class="tabMenuList">
+        <div class="uipm-app-contents">
+            <nav id="uipm-app-nav-menu">
+                <div class="uipm-app-tabMenu">
+                    <ul class="uipm-app-tabMenuList">
                         <li ng-repeat="category in categoryList track by $index" ng-click="onClickTabChange($index)" ng-class="{cur: selectedTabNum === $index}" ng-dblclick="onDblEditCategory(category)" ng-style="{'width': category.len + 'px'}">
                             <input type="text" ng-readonly="!category.edit" ng-model="category.name" ng-blur="editResetCategory(category)" ng-style="{'width': category.len + 'px'}" />
                         </li>
                     </ul>
                 </div>
-                <p class="addCategoryBtn" ng-click="onClickAddCategory()">+</p>
-                <p class="deleteCategoryBtn" ng-click="onClickDeleteCategory(categoryList[selectedTabNum])">-</p>
+                <p class="uipm-app-add-category-btn" ng-click="onClickAddCategory()">+</p>
+                <p class="uipm-app-delete-category-btn" ng-click="onClickDeleteCategory(categoryList[selectedTabNum])">-</p>
             </nav>
 
-            <div class="mainView">
-                <div class="title">
-                    <ul class="titleList">
-                        <li class="col1">Class Name</li>
-                        <li class="col2">Parts Design</li>
-                        <li class="col3">HTML</li>
+            <div id="uipm-app-main-view">
+                <div class="uipm-app-title">
+                    <ul class="uipm-app-titleList">
+                        <li class="uipm-app-col1">Class Name</li>
+                        <li class="uipm-app-col2">Parts Design</li>
+                        <li class="uipm-app-col3">HTML</li>
                     </ul>
                 </div>
-                <div class="mainInputView">
-                    <ul class="itemList" ng-repeat="item in categoryList[selectedTabNum].item track by $index">
-                        <li class="col1">
+                <div class="uipm-app-main-InputView">
+                    <ul class="uipm-app-itemList" ng-repeat="item in categoryList[selectedTabNum].item track by $index">
+                        <li class="uipm-app-col1">
                             <ul class="cssClassList">
                                 <li ng-repeat="cssClass in item.getCssClass(item.dom) track by $index">{{cssClass}}</li>
                             </ul>
                         </li>
-                        <li class="col2">
+                        <li class="uipm-app-col2">
                             <div ng-bind-html="item.parseHTML"></div>
                         </li>
-                        <li class="col3" item-list>
-                            <p class="navText" ng-if="!item.dom && !item.edit">ダブルクリックで編集できます。<br>HTML要素を入力してください。</p>
+                        <li class="uipm-app-col3" item-list>
+                            <p class="uipm-app-nav-text" ng-if="!item.dom && !item.edit">ダブルクリックで編集できます。<br>HTML要素を入力してください。</p>
                             <textarea ng-show="item.dom || item.edit" name="" id="" cols="30" rows="4" ng-disabled="!item.edit" ng-model="item.dom" ng-blur="editResetItem(item)"></textarea>
-                            <p class="deleteItemBtn" ng-click="onClickDeleteItem(selectedTabNum, $index, item)">-</p>
+                            <p class="uipm-app-delete-itemBtn" ng-click="onClickDeleteItem(selectedTabNum, $index, item)">-</p>
                         </li>
                     </ul>
                 </div>
-                <p class="addItemBtn" ng-click="onClickAddItem(selectedTabNum, categoryList[selectedTabNum])">+</p>
+                <p class="uipm-app-add-itemBtn" ng-click="onClickAddItem(selectedTabNum, categoryList[selectedTabNum])">+</p>
             </div>
         </div><!-- /.contents -->
 

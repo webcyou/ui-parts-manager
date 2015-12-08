@@ -5,15 +5,15 @@
 @import "compass/css3/";
 @import "compass/utilities";
 
-header {
+header#uipm-app-header {
     background: #222;
-    .wrap {
+    .uipm-app-header-wrap {
         @include clearfix;
         width: 90%;
         margin: 0 auto;
         padding: 12px 0;
-        .search,
-        .cssInput {
+        .uipm-app-search,
+        .uipm-app-cssInput {
             width: 50%;
             input {
                 display: inline-block;
@@ -36,11 +36,11 @@ header {
                     box-sizing: content-box;
                 }
             }
-            button {
+            button.uipm-app-btn {
                 float: right;
             }
         }
-        .search {
+        .uipm-app-search {
             float: left;
             input {
                 float: left;
@@ -49,7 +49,7 @@ header {
                 }
             }
         }
-        .cssInput {
+        .uipm-app-cssInput {
             float: right;
             input {
                 float: right;
@@ -58,18 +58,18 @@ header {
                 }
             }
         }
-        .logo.main {
+        .uipm-app-logo-main {
             position: absolute;
             top: 4px;
         }
     }
 }
 
-nav {
+nav#uipm-app-nav-menu {
     position: relative;
     width: 90%;
     margin: 20px auto 0;
-    .tabMenu {
+    .uipm-app-tabMenu {
         min-height: 40px;
         padding-right: 20px;
         padding-left: 20px;
@@ -85,7 +85,7 @@ nav {
             content: "";
         }
     }
-    .tabMenuList {
+    .uipm-app-tabMenuList {
         @include clearfix;
         position: relative;
         left: 0;
@@ -102,7 +102,7 @@ nav {
                 border-right: 1px solid #DDD;
             }
             &.cur {
-                color: #555;
+                color: #555 !important;
                 text-decoration: none;
                 background-color: #e5e5e5;
                 box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.125);
@@ -114,6 +114,7 @@ nav {
                 width: 100%;
                 height: 40px;
                 margin: 0 auto;
+                padding: 0;
                 background: none;
                 border: none;
                 font-size: 12px;
@@ -125,17 +126,17 @@ nav {
     }
 }
 
-.mainView,
-.readFiles {
+#uipm-app-main-view,
+#uipm-app-readFiles-view {
     position: relative;
     width: 90%;
     margin: 20px auto;
-    > .title {
+    > .uipm-app-title {
         background-image: linear-gradient(to bottom, #fff, #f2f2f2);
         background-repeat: repeat-x;
         font-weight: bold;
         line-height: 34px;
-        > .titleList {
+        > .uipm-app-titleList {
         @include display-flex;
         border-right: #ddd 1px solid;
             > li {
@@ -145,17 +146,17 @@ nav {
                 border-top: #ddd 1px solid;
                 border-left: #ddd 1px solid;
                 font-size: 14px;
-                &.col1 { width: 20%; }
-                &.col2 { width: 40%; }
-                &.col3 { width: 40%; }
+                &.uipm-app-col1 { width: 20%; }
+                &.uipm-app-col2 { width: 40%; }
+                &.uipm-app-col3 { width: 40%; }
             }
         }
     }
-    > .mainInputView,
-    > .readFilesView {
+    > .uipm-app-main-InputView,
+    > .uipm-app-readFiles {
         width: 100%;
         border-bottom: #dddddd 1px solid;
-        > .itemList {
+        > .uipm-app-itemList {
             @include display-flex;
             > li {
                 @include box-sizing(border-box);
@@ -168,12 +169,12 @@ nav {
                 &:last-child {
                     border-right: #ddd 1px solid;
                 }
-                &.col1 {
+                &.uipm-app-col1 {
                     width: 20%;
                     p { padding: 4px 0 0 4px; }
                 }
-                &.col2 { width: 40%; }
-                &.col3 {
+                &.uipm-app-col2 { width: 40%; }
+                &.uipm-app-col3 {
                     position: relative;
                     width: 40%;
                 }
@@ -189,7 +190,7 @@ nav {
                         color: #000;
                     }
                 }
-                .navText {
+                .uipm-app-nav-text {
                     color: #aaa;
                     font-size: 12px;
                 }
@@ -199,29 +200,28 @@ nav {
             }
         }
     }
-    > .mainInputView {
-        > .itemList {
+    > .uipm-app-main-InputView {
+        > .uipm-app-itemList {
             > li { min-height: 67px; }
         }
     }
-    .assetsSwitch {
+    .uipm-app-assetsSwitch {
         margin-bottom: 10px;
         font-size: 12px;
     }
 }
 
-.readFiles > .title > .titleList > li.col2,
-.readFiles > .readFilesView > .itemList > li.col2 {
+#uipm-app-readFiles-view > .uipm-app-title > .uipm-app-titleList > li.uipm-app-col2,
+#uipm-app-readFiles-view > .uipm-app-readFiles > .uipm-app-itemList > li.uipm-app-col2 {
     position: relative;
     width: 80%;
-
 }
 
-.addCategoryBtn,
-.addItemBtn,
-.deleteCategoryBtn,
-.deleteItemBtn,
-.deleteAssetsBtn {
+.uipm-app-add-category-btn,
+.uipm-app-add-itemBtn,
+.uipm-app-delete-category-btn,
+.uipm-app-delete-itemBtn,
+.uipm-app-delete-assetsBtn {
     position: absolute;
     bottom: 14px;
     border-radius: 50%;
@@ -237,37 +237,37 @@ nav {
     }
 }
 
-.addCategoryBtn,
-.addItemBtn {
+.uipm-app-add-category-btn,
+.uipm-app-add-itemBtn {
     right: 10px;
     background-image: linear-gradient(to bottom, #8AE100, #7AC700);
     font-size: 14px;
 }
 
-.addItemBtn {
+.uipm-app-add-itemBtn {
     bottom: -25px;
 }
 
-.deleteCategoryBtn,
-.deleteItemBtn,
-.deleteAssetsBtn {
+.uipm-app-delete-category-btn,
+.uipm-app-delete-itemBtn,
+.uipm-app-delete-assetsBtn {
     background-image: linear-gradient(to bottom, #FD4141, #D73838);
     font-size: 22px;
     text-indent: 1px;
 }
 
-.deleteCategoryBtn {
+.uipm-app-delete-category-btn {
     right: 35px;
 }
 
-.deleteItemBtn,
-.deleteAssetsBtn {
+.uipm-app-delete-itemBtn,
+.uipm-app-delete-assetsBtn {
     top: 50%;
     right: -25px;
     margin-top: -8px;
 }
 
-.PMT_btn {
+.uipm-app-btn {
     height: 30px;
     margin-left: 5px;
     padding: 0 6px;
@@ -281,11 +281,9 @@ nav {
     cursor: pointer;
 }
 
-.logo {
-    &.main {
-        width: 92px;
-        height: 46px;
-        background: url(/img/ui/base/logo_main.png) no-repeat;
-        @include background-size(92px auto);
-    }
+.uipm-app-logo-main {
+    width: 92px;
+    height: 46px;
+    background: url(/img/ui/base/logo_main.png) no-repeat;
+    @include background-size(92px auto);
 }

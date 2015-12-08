@@ -96,7 +96,7 @@ gulp.task('uglify-contrib', function () {
             SOURCE_DIR + '/js/contrib/angular-resource.js',
             SOURCE_DIR + '/js/contrib/angular-sanitize.js'
     ])
-        .pipe(uglify())
+        .pipe(uglify({preserveComments: 'some'}))
         .pipe(concat('contrib.js'))
         .pipe(gulp.dest(RELEASE_DIR + '/js/'));
 });
