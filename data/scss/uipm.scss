@@ -5,7 +5,7 @@
 @import "compass/css3/";
 @import "compass/utilities";
 
-header#uipm-app-header {
+div#uipm-app-header {
     background: #222;
     .uipm-app-header-wrap {
         @include clearfix;

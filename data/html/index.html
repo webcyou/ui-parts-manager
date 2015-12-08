@@ -16,8 +16,8 @@
 </head>
 <body ng-app="Top">
 <div id="uipm-app-container">
-    <section ng-controller="MainController" id="uipm-app-section">
-        <header id="uipm-app-header">
+    <div ng-controller="MainController" id="uipm-app-section">
+        <div id="uipm-app-header">
             <div class="uipm-app-header-wrap">
                 <p class="uipm-app-logo-main"></p>
                 <div class="uipm-app-cssInput">
@@ -25,7 +25,7 @@
                     <input type="text" placeholder="読み込むcssを入力" ng-model="assets" />
                 </div>
             </div>
-        </header>
+        </div>
 
         <div id="uipm-app-readFiles-view">
             <p class="uipm-app-assetsSwitch" ng-click="onClickAssetsSwitch()">
@@ -86,7 +86,7 @@
             </div>
         </div><!-- /.contents -->
 
-    </section>
+    </div>
 </div>
 </body>
 </html>
