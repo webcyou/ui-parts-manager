@@ -5,6 +5,11 @@
 @import "compass/css3/";
 @import "compass/utilities";
 
+body,
+html {
+    background: #fff !important;
+}
+
 div#uipm-app-header {
     background: #222;
     .uipm-app-header-wrap {
