@@ -1,6 +1,6 @@
 ![UI Parts Manager](http://webcyou.com/ui_parts_manager/img/logo_uipm.png)
 
-# 「UIPM」 UI Parts Manager
+# UIPM： UI Parts Manager
 FrontEnd Developer Tool
 「UI Parts Manager」
 
