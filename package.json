@@ -1,6 +1,6 @@
 {
   "name": "ui-parts-manager",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "UI Parts Manager: UIパーツを管理する nodeパッケージです。",
   "author": "Daisuke Takayama<d.takayama.web@gmail.com>",
   "main": "index.js",
@@ -49,6 +49,13 @@
     "express": "~4.12.3",
     "xmlhttprequest": "~1.7.0"
   },
+  "files": [
+    "README.md",
+    "index.js",
+    "package.json",
+    "public",
+    "lib"
+  ],
   "engines": {
     "node": ">=0.8 <0.12"
   },
