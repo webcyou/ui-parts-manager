@@ -30,10 +30,12 @@ Grant.jsやGulpのタスクに追加すると良いかと思います。
 ![UI Parts Manager](http://webcyou.com/ui_parts_manager/img/uipm002.png)
 
 ポート番号はデフォルトは「8818」となっております。
+
 ![UI Parts Manager](http://webcyou.com/ui_parts_manager/img/uipm003.png)
 
 cssの追加を行いましょう。
 開発環境のルートから「/」でcssファイルのあるパスを指定します。
+
 ![UI Parts Manager](http://webcyou.com/ui_parts_manager/img/uipm003b.png)
 
 （レイアウト崩れましたら連絡いただけるとありがたいです。絶賛対応中）
